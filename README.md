@@ -20,7 +20,7 @@
 ## 🚀 快速开始
 
 ### 1. 下载完整版
-前往 [Releases](https://github.com/hubentuan/mihomo-/releases/latest) 页面下载 `mihomo懒人版-v1.0.0.zip`
+前往 [Releases](https://github.com/hubentuan/mihomo-/releases/latest) 页面下载 `mihomo-lazy.zip`
 
 ### 2. 解压文件
 将压缩包解压到任意目录（建议英文路径）
