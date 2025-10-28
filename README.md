@@ -6,7 +6,7 @@
 
 由于 mihomo.exe 核心文件较大（32MB），请前往 [Releases](https://github.com/hubentuan/mihomo-/releases) 页面下载完整版压缩包。
 
-**最新版本**：[mihomo懒人版 v1.0.0](https://github.com/hubentuan/mihomo-/releases/latest)
+**最新版本**：[mihomo-lazy v1.2.0](https://github.com/hubentuan/mihomo-/releases/latest)
 
 ## ✨ 功能特点
 
