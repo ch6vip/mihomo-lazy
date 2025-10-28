@@ -165,7 +165,7 @@ A:
 4. 访问 http://127.0.0.1:9090/ui 检查面板是否可访问
 
 ### Q: 如何访问本地面板？
-A: 启动服务后，浏览器访问 http://127.0.0.1:9090/ui即可。
+A: 启动服务后，浏览器访问 http://127.0.0.1:9090/ui   ，即可。
 
 ### Q: 本地面板和在线面板有什么区别？
 A: 
@@ -174,7 +174,7 @@ A:
 
 ### Q: 如何确认服务已启动？
 A: 
-1. 访问 http://127.0.0.1:9090/ui，能打开则服务正常
+1. 访问 http://127.0.0.1:9090/ui   ，能打开则服务正常
 2. 查看任务管理器是否有 mihomo.exe 进程
 3. 检查系统代理设置是否为 127.0.0.1:7890
 
@@ -186,8 +186,8 @@ A:
 
 - Mihomo 项目：https://github.com/MetaCubeX/mihomo
 - Zashboard 面板：https://github.com/Zephyruso/zashboard
-- 本地面板地址：http://127.0.0.1:9090/ui/zashboard
-- 在线面板地址：https://zash.xiaoyaogpt.com/
+- 本地面板地址：http://127.0.0.1:9090/ui
+- 在线面板地址：https://zash.xiaoyaogpt.com
 
 ---
 
