@@ -235,6 +235,16 @@ external-controller: 127.0.0.1:9090    # 面板端口
 
 ---
 
+## ⭐ Star 历史
+
+<div align="center">
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hubentuan/mihomo-lazy&type=Date)](https://star-history.com/#hubentuan/mihomo-lazy&Date)
+
+</div>
+
+---
+
 ## 💬 反馈与支持
 
 遇到问题或有建议？欢迎在 [Issues](https://github.com/hubentuan/mihomo-lazy/issues) 反馈！
