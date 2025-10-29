@@ -8,12 +8,10 @@ unified-delay: true
 
 # 控制面板
 external-controller: 127.0.0.1:9090
-external-ui: zashboard 
 secret: ""
+external-ui-name: zashboard
+external-ui: "./ui"
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
-
-tun:
-  enable: false # 修改为false，由面板来切换是否开启tun  
 
 geo-update-interval: 24
 geox-url:
@@ -21,6 +19,12 @@ geox-url:
   geosite: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
   mmdb: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb
   asn: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+
+# TUN
+tun:
+  enable: false # 修改为false，由面板来切换是否开启tun  
+
+
 
 # DNS
 dns:
