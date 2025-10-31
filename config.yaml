@@ -150,4 +150,4 @@ rules:
   - IP-CIDR,172.16.0.0/12,DIRECT
   - RULE-SET,秋风广告规则,广告
   - GEOIP,CN,DIRECT
-  - MATCH,🚀 选择
+  - MATCH,🚀 代理
