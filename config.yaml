@@ -11,7 +11,7 @@ external-controller: 127.0.0.1:9090
 secret: ""
 external-ui-name: zashboard
 external-ui: "./ui"
-external-ui-url: "https://gh.006663.xyz/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://gh-proxy.comz/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 geo-update-interval: 24
 geox-url:
@@ -86,5 +86,4 @@ rules:
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,172.16.0.0/12,DIRECT
   - GEOIP,CN,DIRECT
-  - DOMAIN-REGEX,gh.006663.xyz,DIRECT
   - MATCH,🚀 选择
