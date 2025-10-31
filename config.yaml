@@ -11,7 +11,7 @@ external-controller: 127.0.0.1:9090
 secret: ""
 external-ui-name: zashboard
 external-ui: "./ui"
-external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://gh.006663.xyz/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 geo-update-interval: 24
 geox-url:
@@ -36,45 +36,48 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
 
+#机场订阅全局设置
+pp: &pp
+  type: http
+  interval: 3600
+  health-check:
+    enable: true
+    url: https://www.gstatic.com/generate_204
+    interval: 900
+    timeout: 3000
+    lazy: true
+    expected-status: 204
+
 # 订阅配置
 proxy-providers:
-  家里云:
-    type: http
-    url: "这里放第一个订阅链接"
-    interval: 3600
-    path: ./providers/homcloud.yaml
-    health-check:
-      enable: true
-      interval: 300
-      url: http://www.gstatic.com/generate_204
+  机场:
+    <<: *pp
+    url: "订阅链接"
+    path: ./providers/机场.yaml
   
-  免费云:
-    type: http
-    url: "这里放第二个订阅链接"
-    interval: 3600
-    path: ./providers/freecloud.yaml
-    health-check:
-      enable: true
-      interval: 300
-      url: http://www.gstatic.com/generate_204
+  合集:
+    <<: *pp
+    url: "订阅链接"
+    path: ./providers/合集.yaml
+
 
 proxy-groups:
-  - name: 🚀 代理选择
+  - name: 🚀 代理
     type: select
     proxies:
-      - 📦 家里云
-      - 📦 免费云
+      - 📦 机场
+      - 📦 合集
       - DIRECT
   
-  - name: 📦 家里云
+  - name: 📦 机场
     type: select
     use:
-      - 家里云
+      - 机场
   
-  - name: 📦 免费云
+  - name: 📦 合集
     type: select
     use:
-      - 免费云
+      - 合集
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
@@ -83,4 +86,5 @@ rules:
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,172.16.0.0/12,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,🚀 代理选择
+  - DOMAIN-REGEX,gh.006663.xyz,DIRECT
+  - MATCH,🚀 选择
