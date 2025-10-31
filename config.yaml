@@ -50,40 +50,104 @@ pp: &pp
 
 # 订阅配置
 proxy-providers:
-  机场:
+  机场1:
     <<: *pp
     url: "订阅链接"
-    path: ./providers/机场.yaml
+    path: ./providers/机场1.yaml
   
-  合集:
+  机场2:
     <<: *pp
     url: "订阅链接"
-    path: ./providers/合集.yaml
+    path: ./providers/机场2.yaml
 
+  机场3:
+    <<: *pp
+    url: "订阅链接"
+    path: ./providers/机场3.yaml
 
+  机场4:
+    <<: *pp
+    url: "订阅链接"
+    path: ./providers/机场4.yaml
+
+  机场5:
+    <<: *pp
+    url: "订阅链接"
+    path: ./providers/机场5.yaml
+
+#代理组全局设置
+pg: &pg
+    interval: 300
+    lazy: true
+    timeout: 3000
+    max-failed-times: 5
+    expected-status: 204
+    url: 'https://www.gstatic.com/generate_204'
+#代理组
 proxy-groups:
   - name: 🚀 代理
     type: select
     proxies:
-      - 📦 机场
-      - 📦 合集
+      - 📦 机场1
+      - 📦 机场2
+      - 📦 机场3
+      - 📦 机场4
+      - 📦 机场5
       - DIRECT
   
-  - name: 📦 机场
+  - name: 📦 机场1
+    <<: *pg
     type: select
     use:
-      - 机场
+      - 机场1
   
-  - name: 📦 合集
+  - name: 📦 机场2
+    <<: *pg
     type: select
     use:
-      - 合集
+      - 机场2
+
+  - name: 📦 机场3
+    <<: *pg
+    type: select
+    use:
+      - 机场3
+
+  - name: 📦 机场4
+    <<: *pg
+    type: select
+    use:
+      - 机场4
+
+  - name: 📦 机场5
+    <<: *pg
+    type: select
+    use:
+      - 机场5
+#---------------------自定义分流规则------------------------------
+  - name: 广告
+    type: select
+    proxies:
+      - REJECT
+      - PASS
+#-------------------------------------------------------------------
+rule-providers:
+
+  秋风广告规则:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rule_providers/AWAvenue-Ads-Rule-Clash.yaml
+    url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml"
+    interval: 86400
 
 rules:
+  - DOMAIN-SUFFIX,proxy.com,DIRECT
   - DOMAIN-SUFFIX,local,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT
   - IP-CIDR,192.168.0.0/16,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,172.16.0.0/12,DIRECT
+  - RULE-SET,秋风广告规则,广告
   - GEOIP,CN,DIRECT
   - MATCH,🚀 选择
